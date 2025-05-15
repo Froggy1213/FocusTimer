@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+#timer {
+    font-size: 72px;
+    margin-bottom: 30px;
+}
+
+.buttons button {
+    padding: 12px 24px;
+    margin: 0 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #1f1f1f;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.buttons button:hover {
+    background-color: #333;
+}
+.duration-buttons {
+    margin-bottom: 20px;
+}
+
+.duration-buttons button {
+    padding: 8px 16px;
+    margin: 0 5px 15px 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.duration-buttons button:hover {
+    background-color: #444;
+}
+.custom-time {
+    margin-bottom: 20px;
+}
+
+.custom-time input {
+    padding: 8px;
+    font-size: 16px;
+    width: 180px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.custom-time button {
+    padding: 9px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2a2a2a;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.custom-time button:hover {
+    background-color: #444;
+}
+
+.custom-set-btn {
+    margin-top: 12px;
+    text-align: left;
+}
+
+#settings-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #1f1f1f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#settings-menu {
+    position: fixed;
+    top: 0;
+    left: -290px; /* скрыто */
+    width: 250px;
+    height: 100%;
+    background-color: #1a1a1a;
+    padding: 50px 20px 20px 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+#settings-menu.show {
+    left: 0;
+}
+
+#settings-menu h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.dark-button {
+    font-size: 16px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #2e2e2e;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 6px;
+}
+
+.dark-button:hover {
+    background-color: #444;
+}
+.login-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

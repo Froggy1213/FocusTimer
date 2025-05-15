@@ -1,0 +1,104 @@
+/* Темная тема */
+body {
+    background-color: #121212;  /* темный фон */
+    color: #ffffff;  /* светлый текст */
+    font-family: Arial, sans-serif;
+}
+
+/* Центрирование списка задач */
+.task-list {
+    width: 80%;  /* ширина списка */
+    margin: 0 auto;  /* выравнивание по центру */
+    background-color: #1e1e1e;  /* темный фон для блока с задачами */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;  /* заголовок по центру */
+    color: #ffcc00;  /* яркий цвет для заголовка */
+}
+
+/* Стили для задач */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+}
+
+strong {
+    color: #ffcc00;  /* выделение заголовка задачи */
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e6b800;  /* темнее при наведении */
+}
+
+.btn-danger {
+    background-color: #e60000;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000;
+}
+
+.btn-primary {
+    background-color: #0066ff;
+}
+
+.btn-primary:hover {
+    background-color: #0055cc;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    padding-top: 100px;
+}
+
+
+.modal-content {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#openModal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

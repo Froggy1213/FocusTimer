@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Focus{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'timer/static.css' %}">
+{% endblock %}
+
+{% block content %}
+    <button id="settings-toggle">More</button>
+
+    <div id="settings-menu">
+        <div class="duration-buttons">
+            <ul>
+                <li><button data-minutes="25">Focus</button></li>
+                <li><button data-minutes="5">Break</button></li>
+                <li><button data-minutes="15">Long Break</button></li>
+            </ul>
+        </div>
+
+        <div class="custom-time">
+            <input type="text" id="custom-input" placeholder="min:sec">
+            <div class="custom-set-btn">
+                <button id="set-custom-btn">set</button>
+            </div>
+        </div>
+
+        <div class="login-button">
+            {% if user.is_authenticated %}
+                <a href="{% url 'task_list' %}" class="dark-button">Task List</a>
+            {% else %}
+                <p><a href="{% url 'login' %}" class="dark-button">Task List</a></p>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                     <button type="submit" class="dark-button">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="dark-button">Login</a>
+             {% endif %}
+
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <!-- Таймер -->
+        <div id="timer">25:00</div>
+
+        <!-- Кнопки управления -->
+        <div class="buttons">
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+    </div>
+
+    <script src="{% static 'timer/script.js' %}"></script>
+
+{% endblock %}

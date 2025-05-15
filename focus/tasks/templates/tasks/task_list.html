@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Tasks{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="task-list">
+    <h2>Task List</h2>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong><br>
+                <p>Deadline: {{ task.deadline|date:"Y-m-d" }}</p>
+
+                <form method="post" action="{% url 'task_delete' task.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </li>
+        {% empty %}
+            <p>You don't have any tasks yet.</p>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Кнопка открыть модальное окно -->
+<button id="openModal" class="btn btn-primary">Add Task</button>
+
+<!-- Модальное окно -->
+<div id="taskModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>New Task</h2>
+    <form method="post" action="{% url 'task_create' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </div>
+</div>
+
+<script src="{% static 'tasks/script.js' %}"></script>
+{% endblock %}
